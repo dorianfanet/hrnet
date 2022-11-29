@@ -1,7 +1,5 @@
 import { DataGrid } from '@mui/x-data-grid'
 import styled from 'styled-components'
-import { selectEmployees } from '../store/selectors'
-import { useSelector } from 'react-redux'
 
 const columnWidth = 1022 / 9
 
@@ -23,7 +21,7 @@ const TableContainer = styled.div`
 
 export default function EmployeeList() {
 
-  const data = useSelector(selectEmployees)
+  const data = JSON.parse(localStorage.getItem('employees')) || []
 
   function dateFormat(date){
     if(date){

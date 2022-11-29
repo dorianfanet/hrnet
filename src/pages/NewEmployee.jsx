@@ -4,7 +4,7 @@ import Button from '../components/Button'
 import { states } from '../data/selectInputsData.js'
 import { departments } from '../data/selectInputsData.js'
 import SelectInput from '../components/SelectInput'
-import DatePicker from '../components/DatePicker'
+import DatePicker from 'hrnet-datepicker/dist/DatePicker'
 import { useState } from 'react'
 import { useDispatch } from 'react-redux'
 import { setNewEmployee } from '../store/store'
@@ -26,6 +26,8 @@ const Form = styled.form`
     margin: 20px 0;
     background-color: var(--lightGreen);
     padding: 20px;
+    border: 2px solid var(--mainColor);
+    border-radius: 10px;
 
     & h3{
       font-size: 28px;
@@ -76,8 +78,8 @@ export default function NewEmployee() {
 
   function handleSubmit(e){
     e.preventDefault()
-    console.log(formData)
     dispatch(setNewEmployee(formData))
+    localStorage.setItem('employees', JSON.stringify(formData))
     setModalState(!modalState)
   }
 
@@ -107,8 +109,8 @@ export default function NewEmployee() {
             />
           </div>
           <div className='input-container'>
-          <DatePicker
-            label='Date of birth'
+          <DatePicker 
+            label="Date of birth"
             name='birthdate'
             onChange={handleInputChange}
           />
@@ -155,7 +157,7 @@ export default function NewEmployee() {
         <section>
           <div className='input-container'>
             <DatePicker
-              label='Start day'
+              label='Start date'
               name='startdate'
               onChange={handleInputChange}
             />
