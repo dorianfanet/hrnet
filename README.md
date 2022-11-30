@@ -1,4 +1,4 @@
-![Markdown Logo](src/assets/logo.svg)
+# HRnet
 
 Front-end repo of HRnet project
 
