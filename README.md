@@ -1,4 +1,4 @@
-![Markdown Logo](src/assets/logo.svg)
+![Markdown Logo](src/assets/logo.svg =50x50)
 
 Front-end repo of HRnet project
 
