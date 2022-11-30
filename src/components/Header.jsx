@@ -75,6 +75,12 @@ export default function Header() {
   )
 }
 
+/**
+ * Determines which nav button to display
+ * @param {String} to - Path to target page
+ * @param {ReactElement} children - Content of the nav button
+ * @returns 
+ */
 function NavLink({ to, children }) {
   const resolvedPath = useResolvedPath(to);
   const isActive = useMatch({ path: resolvedPath.pathname, end: true });

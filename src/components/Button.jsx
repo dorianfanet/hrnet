@@ -19,6 +19,12 @@ const StyledButton = styled.button`
   }
 `
 
+/**
+ * Button component
+ * @param {String} title - Content of the button
+ * @param {String} type - Type of the button
+ * @param {function} onClick - Handler for click on button 
+ */
 export default function Button({ title, type, onClick }) {
   return (
     <StyledButton type={type} onClick={onClick}>{title}</StyledButton>

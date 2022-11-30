@@ -1,5 +1,10 @@
 import { useEffect } from "react";
 
+/**
+ * Hook used to close a modal on click outside of the element
+ * @param {ReactElement} ref - Referenced element
+ * @param {function} handler - Handler function
+ */
 export default function useOnClickOutside(ref, handler) {
   useEffect(
     () => {

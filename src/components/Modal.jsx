@@ -46,6 +46,11 @@ const ModalBody = styled.div`
   }
 `
 
+/**
+ * Modal component
+ * @param {String} content - Message displayed in the modal
+ * @param {function} onClick - Handler for closing the modal 
+ */
 export default function Modal({ content, onClick }) {
   const ref = useRef()
 

@@ -44,6 +44,15 @@ const SelectContainer = styled.div`
     }
 `
 
+/**
+ * Select component
+ * @param {Array} dataset - List of entries to display in select
+ * @param {String} valueName - Value of the entry
+ * @param {String} dataName - Displayed name of the entry
+ * @param {String} label - Label of the input
+ * @param {String} inputName - Name of the input
+ * @param {function} onChange - Handler for change of selected value
+ */
 export default function SelectInput({ dataset, valueName, dataName, label, inputName, onChange  }) {
   const [value, setValue] = useState('');
 

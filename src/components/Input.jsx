@@ -42,11 +42,18 @@ const Container = styled.div`
   }
 `
 
-export default function Input({ label, name, type, whiteBackground, onChange }){
+/**
+ * Input component
+ * @param {String} label - Text displayed in the label of the input
+ * @param {String} name - Name of the input
+ * @param {String} type - Type of the input
+ * @param {function} onChange - Handler for input value change
+ */
+export default function Input({ label, name, type, onChange }){
   return (
     <Container>
       <label htmlFor={name}>{label}</label>
-      <input className={whiteBackground ? 'white' : 'white'} id={name} type={type} onChange={onChange}/>
+      <input id={name} type={type} onChange={onChange}/>
     </Container>
   )
 }

@@ -40,14 +40,12 @@ export default function EmployeeList() {
     })
   }
 
-  const rows = formattedData || []
-
   return (
     <div className="responsive">
       <h1 className="page-title">Current employees</h1>
       <TableContainer>
         <DataGrid
-          rows={rows}
+          rows={formattedData}
           columns={columns}
           sx={{ minWidth: 650 }}
         />

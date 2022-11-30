@@ -58,6 +58,11 @@ export default function NewEmployee() {
 
   const [formData, setFormData] = useState(initialState)
 
+  /**
+   * Handle change in input to store data in formData state
+   * @param {ReactElement|String} e - Either input element or value returned by a component (e.g. datepicker)
+   * @param {String} inputName - Name of the input
+   */
   function handleInputChange(e, inputName){
     if(e.target){
       setFormData({
@@ -72,6 +77,10 @@ export default function NewEmployee() {
     }
   }
 
+  /**
+   * Handle submit of the form
+   * @param {ReactElement} e - Button element of the form
+   */
   function handleSubmit(e){
     e.preventDefault()
     const employees = JSON.parse(localStorage.getItem('employees')) || []
