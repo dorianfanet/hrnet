@@ -1,5 +1,7 @@
+import { useRef } from 'react'
 import styled from 'styled-components'
 import XMark from '../assets/XMark'
+import useOnClickOutside from '../hooks/useOnClickOutside'
 
 const ModalContainer = styled.div`
   position: absolute;
@@ -45,10 +47,14 @@ const ModalBody = styled.div`
 `
 
 export default function Modal({ content, onClick }) {
+  const ref = useRef()
+
+  useOnClickOutside(ref, onClick)
+
   return (
     <ModalContainer>
       <div className='responsive'>
-        <ModalBody>
+        <ModalBody ref={ref}>
           <p>{content}</p>
           <div className='icon' onClick={onClick}>
             <XMark />

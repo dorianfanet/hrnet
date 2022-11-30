@@ -6,8 +6,6 @@ import { departments } from '../data/selectInputsData.js'
 import SelectInput from '../components/SelectInput'
 import DatePicker from 'hrnet-datepicker/dist/DatePicker'
 import { useState } from 'react'
-import { useDispatch } from 'react-redux'
-import { setNewEmployee } from '../store/store'
 import Modal from '../components/Modal'
 
 const Form = styled.form`
@@ -46,8 +44,6 @@ const Form = styled.form`
 
 export default function NewEmployee() {
 
-  const dispatch = useDispatch()
-
   const initialState = {
     firstname: '',
     lastname: '',
@@ -56,7 +52,7 @@ export default function NewEmployee() {
     city: '',
     state: '',
     zipcode: '',
-    startDay: new Date(),
+    startdate: new Date(),
     department: ''
   }
 
@@ -78,8 +74,16 @@ export default function NewEmployee() {
 
   function handleSubmit(e){
     e.preventDefault()
-    dispatch(setNewEmployee(formData))
-    localStorage.setItem('employees', JSON.stringify(formData))
+    const employees = JSON.parse(localStorage.getItem('employees')) || []
+    localStorage.setItem('employees', JSON.stringify(
+      [
+        ...employees, 
+        {
+          ...formData,
+          id: employees.length + 1
+        }
+      ]
+    ))
     setModalState(!modalState)
   }
 

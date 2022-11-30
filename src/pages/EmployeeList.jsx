@@ -21,14 +21,11 @@ const TableContainer = styled.div`
 
 export default function EmployeeList() {
 
-  const data = JSON.parse(localStorage.getItem('employees')) || []
+  const data = JSON.parse(localStorage.getItem('employees'))
 
-  function dateFormat(date){
-    if(date){
-      return `${date.getFullYear()}-${('0' + (date.getMonth() + 1)).slice(-2)}-${('0' + date.getDate()).slice(-2)}`
-    } else {
-      return date
-    }
+  function dateFormat(e){
+    const date = new Date(e)
+    return `${date.getFullYear()}-${('0' + (date.getMonth() + 1)).slice(-2)}-${('0' + date.getDate()).slice(-2)}`
   }
 
   let formattedData = []
