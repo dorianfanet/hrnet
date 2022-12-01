@@ -20,16 +20,12 @@ const Container = styled.div`
     padding: .4em;
     width: calc(100% - .8em);
     border: 2px solid var(--mainColor);
-    background-color: var(--lightGreen);
+    background-color: white;
     border-radius: 5px;
     color: var(--mainColor);
     font-family: 'Lexend Deca', sans-serif;
     font-weight: 600;
     transition: all 200ms ease;
-
-    &.white{
-      background-color: white;
-    }
 
     &:focus-visible{
       outline: none;

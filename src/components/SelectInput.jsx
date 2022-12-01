@@ -71,7 +71,7 @@ export default function SelectInput({ dataset, valueName, dataName, label, input
         inputProps={{ 'aria-label': 'Without label' }}
       >
         {dataset.map((data) => 
-          <MenuItem value={data[valueName]}>{data[dataName]}</MenuItem>
+          <MenuItem key={data[valueName]} value={data[valueName]}>{data[dataName]}</MenuItem>
         )}
       </Select>
     </SelectContainer>
